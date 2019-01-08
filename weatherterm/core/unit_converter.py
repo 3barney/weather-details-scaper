@@ -6,7 +6,7 @@ class UnitConverter:
     self.dest_unit = dest_unit
 
     self._convert_functions = {
-      Unit.CELSIUS: self._to_celcius
+      Unit.CELSIUS: self._to_celcius,
       Unit.FAHRENHEIT: self._to_fahrenheit
     }
 
@@ -25,14 +25,14 @@ class UnitConverter:
       return 0
 
     if (self.dest_unit == self._parser_default_unit or self.dest_unit is None):
-      return self.format_results(temperature)
+      return self._format_results(temperature)
     
     func = self._convert_functions[self.dest_unit]
     result = func(temperature)
 
     return self._format_results(result)
 
-  def format_results(self, result):
+  def _format_results(self, value):
     return int(value) if value.is_integer() else f'{value:.1f}'
 
   def _to_celcius(self, fahrenheit_temp):
