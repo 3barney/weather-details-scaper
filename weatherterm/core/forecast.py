@@ -23,7 +23,7 @@ class Forecast:
     else:
       self._forecast_date = forecast_date
 
-  @property
+  @property #This decorator turns method into a getter for forcast_date
   def forecast_date(self):
     return self._forecast_date
 

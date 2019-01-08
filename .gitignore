@@ -1,2 +1,4 @@
 phantomjs/
 .phantomjs/
+.vscode/
+weatherterm/core/__pycache__
